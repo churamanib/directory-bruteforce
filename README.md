@@ -3,8 +3,10 @@
 directory brutefprce all website using many tools
 ----
 <h1/>1. gobuster how we use this tool<h1/>
+  
 installation gobuster
 ----
+
   
 We need to install Gobuster Tool since it is not included on Kali Linux by default
 
