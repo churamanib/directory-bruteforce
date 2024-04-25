@@ -234,6 +234,9 @@ In this example, We are filtering out VHOST default port 4242 specified in the -
 ```
 ffuf -w /usr/share/wordlists/vhost.txt -u https://example.org -H “Host: FUZZ” -fs 4242
 ```
+```
+ffuf -w /usr/share/dirbuster/wordlists/directory-list-1.0.txt -u http://megacorp.com/FUZZ -fc 404 | tee recon/ffuf_initial_directory.log
+```
 
 GET parameter fuzzing
 ----
