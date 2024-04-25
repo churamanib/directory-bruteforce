@@ -7,3 +7,7 @@
 ```
 apt-get install gobuster
 ```
+<p1/>Then, simply type gobuster into the terminal to run the tool for use.<p1/>
+```
+gobuster -h
+```
