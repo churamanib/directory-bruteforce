@@ -195,3 +195,75 @@ Target for Scanning : https://testphp.vulnweb.com
  
 Installation of Ffuf Tool on Kali Linux OS
 ----
+
+Step 1: If you have downloaded Golang in your system, verify the installation by checking the version of Golang, use the following command.
+```
+go version
+```
+
+Get the Ffuf repository or clone the Ffuf tool from GitHub, use the following command.
+```
+sudo GO111MODULE=on go get -u github.com/ffuf/ffuf
+```
+Check the version of the Ffuf tool using the following command.
+```
+ffuf -V
+```
+Check the help menu page to get a better understanding of the Ffuf tool, use the following command.
+```
+ffuf -h
+```
+
+Configuration files
+----
+
+When the execution of the ffuf tool is started the tool firstly checks its default configuration file exits or not. Mostly the path of the configuration file is at ~/.ffufrc /$HOME/.ffufrc or can be at /home/gaurav/.ffufrc. In Windows OS this path can vary and mostly it can be at %USERPROFILE%\.ffufrc. There are configuration options provided on the terminal that override the ones loaded from the ~/.ffufrc file. For example, If you wish to use a bunch of configuration files for various scenarios, then you can define the configuration file path by using the -config tag which takes the file path to the configuration file as its parameter.
+
+Working with Ffuf Tool on Kali Linux OS
+----
+
+Typical directory discovery
+```
+ffuf -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u https://example.org/FUZZ
+```
+
+Virtual host discovery (without DNS records)
+----
+
+In this example, We are filtering out VHOST default port 4242 specified in the -fs tag.
+```
+ffuf -w /usr/share/wordlists/vhost.txt -u https://example.org -H “Host: FUZZ” -fs 4242
+```
+
+GET parameter fuzzing
+----
+
+In this example, We are using the GET method for fuzzing the directories.
+```
+ffuf -w /usr/share/wordlists/parameters.txt -u http://testphp.vulnweb.com/search.php?FUZZ=test_value -fs 4242
+```
+
+Maximum execution time
+----
+
+In this example, We are specifying the maximum request time. We have used -maxtime tag for specifying the time.
+```
+ffuf -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u https://example.org/FUZZ -maxtime 60
+```
+
+POST Data Fuzzing
+---
+
+In this example, We are using the POST method for fuzzing the directories.
+```
+ffuf -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -X POST -d “username=admin\&password=FUZZ” -u https://testphp.vulnweb.com/login.php -fc 401
+```
+
+Using an external mutator to produce test cases
+----
+
+In this example, We’ll fuzz JSON data that’s sent over POST. Radamsa s used as the mutator.
+```
+ffuf –input-cmd ‘radamsa –seed $FFUF_NUM example1.txt example2.txt’ -H “Content-Type: application/json” -X POST -u https://testphp.vulnweb.com/ -mc all -fc 400
+```
+
