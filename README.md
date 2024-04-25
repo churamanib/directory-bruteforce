@@ -193,4 +193,4 @@ Target for Scanning : https://testphp.vulnweb.com
 <br/>
 <br/>
 Installation of Ffuf Tool on Kali Linux OS
----
+----
