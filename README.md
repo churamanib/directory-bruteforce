@@ -59,3 +59,67 @@ Gobuster Tool enumerates hidden directories and files in the target domain by pe
 gobuster dir -u https://www.geeksforgeeks.org/ -w /usr/share/wordlists/big.txt
 ```
 
+
+Enumerating Files
+----
+
+Gobuster Tool can enumerate hidden files along with the remote directories. Gobuster allows us to use the “-x” option followed by the file extensions you’d like to search for.
+
+Consider the example below:
+```
+gobuster dir -u https://www.geeksforgeeks.com w /usr/share/wordlists/big.txt -x php,html,htm
+```
+In this command, we are specifically searching for files that have php,htm or html extensions.
+
+
+Obtaining Full Path for a directory or file
+----
+
+
+
+Option “-e” is used for completing printing URL when extracting any hidden file or hidden directories
+```
+gobuster dir -e -u geeksforgeeks.org -w /usr/share/wordlists/dirb/common.txt –wildcard
+```
+
+
+Hide Status Code
+----
+
+
+Using -n Option “no status” mode prints the results’ output without presenting the status code.
+```
+gobuster dir -u geeksforgeeks.org -w /usr/share/wordlists/dirb/common.txt -n –wildcard
+```
+
+
+
+Disable Banner
+----
+
+
+Gobuster tool constantly adds the banner to define the brief introduction of applied options while launching a brute force attack. By using the -q option, we can disable the flag to hide extra data.
+```
+gobuster dir  -u geeksforgeeks.org -w /usr/share/wordlists/dirb/common.txt -q –wildcard
+```
+
+
+Set Threads Number
+----
+
+
+Using the -t option enables the number of thread parameters to be implemented while brute-forcing sub-domain names or directories.
+```
+gobuster  dns -d geeksforgeeks.org -t 100 -w /usr/share/wordlists/dirb/common.txt –wildcard
+```
+
+
+Obtain Sub Domain IPs
+----
+
+
+Using the -i option allows the IP parameter, which should show the IPs of selected sub-domains.
+```
+gobuster  dns -d geeksforgeeks.org -t 100 -w /usr/share/wordlists/dirb/common.txt -i –wildcard
+```
+<p1/>DNS mode is covered in this command<p1/>
