@@ -2,9 +2,7 @@
 directory Bruteforcing Attack Any Web Page 
 ---
 
-if you want to use another tool click below link
-<bir/>
-click link [here](https://github.com/churamanib/directory-scanning.git).
+if you want to use another tool click this link [here](https://github.com/churamanib/directory-scanning.git).
 
 <h4/>///////////////////////////////////////////////////////////////////////////////////////////////<h4/>
 <br/>
