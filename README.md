@@ -11,11 +11,13 @@ apt-get install gobuster
 ```
 gobuster -h
 ```
-<p1/>Note that these examples will not work if the mandatory option “-u” is not specified.Wordlist Specification<p1/>
+<p1/>Note that these examples will not work if the mandatory option “-u” is not specified.Wordlist Specification
+
+<p1/>
 ```
 gobuster dir -u https://www.exampale.org/ -w /usr/share/wordlists/big.txt
 ```
-<p1/>Obtaining Full Path for a directory or file
+<p1/>Obtaining Full Path for a directory or file<br/>
 Option “-e” is used for completing printing URL when extracting any hidden file or hidden directories
 <p1/>
 ```
