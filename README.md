@@ -11,3 +11,7 @@ apt-get install gobuster
 ```
 gobuster -h
 ```
+<p1/>Note that these examples will not work if the mandatory option “-u” is not specified.Wordlist Specification<p1/>
+```
+gobuster dir -u https://www.geeksforgeeks.org/ -w /usr/share/wordlists/big.txt
+```
