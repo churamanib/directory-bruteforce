@@ -1,6 +1,10 @@
 # directory-bruteforce
 directory Bruteforcing Attack Any Web Page 
 ---
+
+if you want to use another tool click below link
+click link [here]below
+
 <h4/>///////////////////////////////////////////////////////////////////////////////////////////////<h4/>
 <br/>
 <br/>
